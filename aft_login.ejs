@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ecourse Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard-header {
+            background-color: #234567;
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dashboard-header h1 {
+            margin: 0;
+        }
+        .dashboard-header .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .dashboard-header .user-info span {
+            margin-left: 10px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .courses, .lesson-schedule, .progress {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .courses h2, .lesson-schedule h2, .progress h2 {
+            margin-top: 0;
+        }
+        .course {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .course.course-one {
+            background-color: #c0e6f7;
+        }
+        .course.course-two {
+            background-color: #f7d9aa;
+        }
+        .course.course-three {
+            background-color: #f7f7aa;
+        }
+        .course.course-four {
+            background-color: #f7aaaa;
+        }
+        .course .info {
+            display: flex;
+            flex-direction: column;
+        }
+        .course .info span {
+            margin: 2px 0;
+        }
+        .course .price {
+            font-weight: bold;
+        }
+        .course .watch-now {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .lesson-schedule .lesson {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .lesson-schedule .lesson:last-child {
+            border-bottom: none;
+        }
+        .progress .progress-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .progress .progress-bar:last-child {
+            margin-bottom: 0;
+        }
+        .progress .progress-bar .label {
+            width: 150px;
+        }
+        .progress .progress-bar .bar {
+            flex-grow: 1;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress .progress-bar .bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #007bff;
+        }
+        .progress .progress-bar.course-one .bar::after {
+            width: 83%;
+        }
+        .progress .progress-bar.course-two .bar::after {
+            width: 47%;
+        }
+        .progress .progress-bar.course-three .bar::after {
+            width: 42%;
+        }
+    </style>
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>Ecourse Dashboard</h1>
+        <div class="user-info">
+            <span>James Smith</span>
+            <img src="avatar.png" alt="User Avatar" width="40" height="40">
+        </div>
+    </header>
+    <div class="container">
+        <div class="courses">
+            <h2>My Courses</h2>
+            <div class="course course-one">
+                <div class="info">
+                    <span>Course One</span>
+                    <span>18 Lessons - 240 Minutes</span>
+                    <span>Michael Brown</span>
+                </div>
+                <span class="price">$1200</span>
+                <a href="#" class="watch-now">Watch Now</a>
+            </div>
+            <div class="course course-two">
+                <div class="info">
+                    <span>Course Two</span>
+                    <span>15 Lessons - 200 Minutes</span>
+                    <span>John Johnson</span>
+                </div>
+                <span class="price">$1200</span>
+                <a href="#" class="watch-now">Watch Now</a>
+            </div>
+            <div class="course course-three">
+                <div class="info">
+                    <span>Course Three</span>
+                    <span>24 Lessons - 360 Minutes</span>
+                    <span>William Jones</span>
+                </div>
+                <span class="price">$1500</span>
+                <a href="#" class="watch-now">Watch Now</a>
+            </div>
+            <div class="course course-four">
+                <div class="info">
+                    <span>Course Four</span>
+                    <span>18 Lessons - 240 Minutes</span>
+                    <span>John Johnson</span>
+                </div>
+                <span class="price">$850</span>
+                <a href="#" class="watch-now">Watch Now</a>
+            </div>
+        </div>
+        <div class="lesson-schedule">
+            <h2>Lesson Schedule</h2>
+            <div class="lesson">
+                <span>Course One</span>
+                <span>Michael Brown - 11:30 AM</span>
+                <span>Lesson 4</span>
+                <span>50 Min</span>
+            </div>
+            <div class="lesson">
+                <span>Course Two</span>
+                <span>John Johnson - 2:30 PM</span>
+                <span>Lesson 5</span>
+                <span>30 Min</span>
+            </div>
+            <div class="lesson">
+                <span>Course Three</span>
+                <span>William Jones - 10:30 AM</span>
+                <span>Lesson 1</span>
+                <span>60 Min</span>
+            </div>
+            <div class="lesson">
+                <span>Course Four</span>
+                <span>John Johnson - 4:30 PM</span>
+                <span>Lesson 7</span>
+                <span>50 Min</span>
+            </div>
+        </div>
+        <div class="progress">
+            <h2>Progress</h2>
+            <div class="progress-bar course-one">
+                <span class="label">Course One</span>
+                <div class="bar"></div>
+                <span>15/18 Lessons</span>
+                <span>Price: 150 Coins</span>
+            </div>
+            <div class="progress-bar course-two">
+                <span class="label">Course Two</span>
+                <div class="bar"></div>
+                <span>7/15 Lessons</span>
+                <span>Price: 270 Coins</span>
+            </div>
+            <div class="progress-bar course-three">
+                <span class="label">Course Three</span>
+                <div class="bar"></div>
+                <span>10/24 Lessons</span>
+                <span>Price: 400 Coins</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

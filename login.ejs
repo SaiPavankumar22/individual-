@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: #58c;
+            padding: 40px;
+            border-radius: 40px 0 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #fff;
+            width: 300px;
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #000;
+            border-radius: 20px;
+            outline: none;
+            background: #fff;
+            color: #000;
+            padding-left: 20px;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .options label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        .options a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background: #000;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .toggle {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .toggle a {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .form-container {
+            display: none;
+        }
+        .form-container.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="login-container" class="form-container active">
+            <form action="/signinsubmit" method="get" class="login-form">
+                <h1>Login</h1>
+                <input type="text" name="email_id" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <button type="submit">LOGIN</button>
+                <div class="toggle">
+                    Don't have an account? <a onclick="toggleForms()">Register here</a>
+                </div>
+            </form>
+        </div>
+        <div id="signup-container" class="form-container">
+            <form action="/signupsubmit" method="get" class="signup-form">
+                <h1>Sign Up</h1>
+                <input type="email" name="email_id" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Get Started</button>
+                <div class="toggle">
+                    Already have an account? <a onclick="toggleForms()">Login here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function toggleForms() {
+            const loginContainer = document.getElementById('login-container');
+            const signupContainer = document.getElementById('signup-container');
+            loginContainer.classList.toggle('active');
+            signupContainer.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
